@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keygen Locksmiths Bedford | 24/7 Emergency Locksmith | Bedford & Bedfordshire</title>
+  <title>Keygen Locksmiths Bedfordshire | 24/7 Emergency Locksmith | Bedford & Bedfordshire</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -609,31 +609,25 @@
 
     /* ── CONTACT / CTA ───────────────────────────────────── */
     .contact {
-      background: var(--gold);
-      text-align: center;
+      background: var(--black);
       padding: 80px 40px;
       border-bottom: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .contact h2 {
-      color: var(--black);
-      margin-bottom: 14px;
-    }
+    .contact-left h2 { color: var(--white); margin-bottom: 14px; }
+    .contact-left h2 em { color: var(--gold-lt); }
+    .contact-left > p { color: var(--grey); margin-bottom: 32px; }
 
-    .contact h2 em { color: rgba(0,0,0,0.45); }
-
-    .contact p {
-      color: rgba(0,0,0,0.6);
-      max-width: 480px;
-      margin: 0 auto 36px;
-    }
-
-    .contact .btn-dark {
+    .contact-left .btn-dark {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--black);
-      color: var(--gold-lt);
+      background: var(--gold);
+      color: var(--black);
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.14em;
@@ -643,7 +637,102 @@
       transition: background 0.2s;
     }
 
-    .contact .btn-dark:hover { background: #222; }
+    .contact-left .btn-dark:hover { background: var(--gold-lt); }
+
+    .contact-info {
+      margin-top: 28px;
+      font-size: 12px;
+      color: rgba(245,242,236,0.35);
+      letter-spacing: 0.06em;
+      line-height: 2.2;
+    }
+
+    .contact-info strong { color: rgba(245,242,236,0.6); font-weight: 500; }
+
+    .contact-form-wrap {
+      background: #111110;
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 36px;
+    }
+
+    .contact-form-wrap h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--grey);
+      margin-bottom: 24px;
+      max-width: none;
+    }
+
+    .form-group { margin-bottom: 14px; }
+
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: #0d0d0b;
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--gold); }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-group select option { background: #0d0d0b; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: none;
+      padding: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover { background: var(--gold-lt); }
+
+    .form-emergency {
+      font-size: 11px;
+      color: rgba(245,242,236,0.3);
+      text-align: center;
+      margin-top: 12px;
+      max-width: none;
+    }
+
+    .form-emergency a { color: var(--gold); text-decoration: none; }
 
     /* ── FOOTER ──────────────────────────────────────────── */
     footer {
@@ -713,7 +802,8 @@
       .postcode-grid { gap: 6px; }
       .reviews-top { flex-direction: column; align-items: flex-start; }
       footer { flex-direction: column; align-items: flex-start; }
-      .contact { padding: 60px 24px; }
+      .contact { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -741,13 +831,13 @@
 
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      24/7 Mobile Locksmith · Bedford
+      24/7 Mobile Locksmith · Bedfordshire
     </div>
 
     <h1>Your door open.<br><em>Your evening back.</em></h1>
 
     <p class="hero-tagline">
-      Bedford's only owner-operated 24-hour locksmith. When you call, Ray picks up.
+      Bedfordshire's only owner-operated 24-hour locksmith. When you call, Ray picks up.
       When Ray says fifteen minutes, he means it. Straightforward pricing, no surprises on the invoice.
     </p>
 
@@ -767,7 +857,7 @@
       </div>
       <div class="stat">
         <div class="stat-value">~15 min</div>
-        <div class="stat-label">Avg. response, Bedford</div>
+        <div class="stat-label">Avg. response, Bedfordshire</div>
       </div>
     </div>
   </div>
@@ -775,7 +865,7 @@
   <!-- ABOUT ────────────────────────────────────────────────── -->
   <section class="about" id="about">
     <div class="about-image">
-      <img src="Screenshot 2026-05-20 at 21.17.02.png" alt="Lock replacement job, Bedford" />
+      <img src="ray.jpeg" alt="Ray, Keygen Locksmiths" />
     </div>
     <div>
       <p class="section-eyebrow">About / Ray</p>
@@ -854,7 +944,7 @@
   <!-- GALLERY CAROUSEL ─────────────────────────────────────── -->
   <section class="gallery" id="gallery">
     <p class="section-eyebrow">From the van</p>
-    <h2>Real jobs.<br><em>Real Bedford doors.</em></h2>
+    <h2>Real jobs.<br><em>Real Bedfordshire doors.</em></h2>
     <p style="margin-bottom: 36px;">A selection from recent call-outs — lockouts, broken keys, UPVC repairs, heritage safes. What you see is what Ray does.</p>
 
     <div class="carousel" id="mainCarousel">
@@ -988,14 +1078,46 @@
     </div>
   </section>
 
-  <!-- CONTACT CTA ──────────────────────────────────────────── -->
+  <!-- CONTACT ──────────────────────────────────────────────── -->
   <section class="contact" id="contact">
-    <h2>Locked out?<br><em>Call — don't wait.</em></h2>
-    <p>
-      Calling is the quickest route. If it's not an emergency, text 07903 095985
-      and Ray will get back to you within the hour during the day.
-    </p>
-    <a class="btn-dark" href="tel:07903095985">📞 &nbsp; Call 07903 095985</a>
+    <div class="contact-left">
+      <p class="section-eyebrow">Get in touch</p>
+      <h2>Locked out?<br><em>Call — don't wait.</em></h2>
+      <p>Calling is the quickest route. If it's not an emergency, use the form and Ray will get back to you within the hour during the day.</p>
+      <a class="btn-dark" href="tel:07903095985">📞 &nbsp; Call 07903 095985</a>
+      <div class="contact-info">
+        <strong>Hours</strong> &nbsp; Open 24/7<br>
+        <strong>Direct line</strong> &nbsp; 07903 095985<br>
+        <strong>Email</strong> &nbsp; keygenlocksmiths@gmail.com
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Not urgent? Leave your details.</h3>
+      <p class="form-note">Ray will get back to you within the hour during the day.</p>
+      <form action="https://formspree.io/f/mzdwejjo" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="First name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Your number</label>
+            <input type="tel" id="phone" name="phone" placeholder="07700 000000" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="postcode">Your postcode</label>
+          <input type="text" id="postcode" name="postcode" placeholder="e.g. MK40 1AA" />
+        </div>
+        <div class="form-group">
+          <label for="message">What's happened?</label>
+          <textarea id="message" name="message" placeholder="Lockout, broken key, lock upgrade, safe…" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send to Ray</button>
+        <p class="form-emergency">Emergency? Skip the form and <a href="tel:07903095985">call 07903 095985</a>.</p>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER ───────────────────────────────────────────────── -->
@@ -1005,8 +1127,8 @@
       <div class="footer-badge-text">UK Locksmiths<br>Association Member</div>
     </div>
     <div class="footer-copy">
-      Bedford's owner-operated 24-hour locksmith. The number on this site is Ray's direct line — he answers it himself.<br>
-      © 2026 Keygen Locksmiths, Bedford · Owner: Ray · MK42 0PU
+      Bedfordshire's owner-operated 24-hour locksmith. The number on this site is Ray's direct line — he answers it himself.<br>
+      © 2026 Keygen Locksmiths, Bedfordshire · Owner: Ray · MK42 0PU
     </div>
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
