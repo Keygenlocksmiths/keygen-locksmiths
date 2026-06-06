@@ -56,7 +56,6 @@
       text-decoration: none;
     }
 
-    /* ── Logo ── */
     .logo-crest {
       width: 54px;
       height: 54px;
@@ -127,7 +126,6 @@
       overflow: hidden;
     }
 
-    /* Subtle dot texture */
     .hero::before {
       content: '';
       position: absolute;
@@ -156,7 +154,6 @@
       box-shadow: 0 0 6px #4CAF50;
     }
 
-    /* Large logo in hero */
     .hero-crest {
       width: 180px;
       height: 180px;
@@ -443,51 +440,258 @@
       margin-bottom: 48px;
     }
 
-    .service-list {
-      list-style: none;
-      border-top: 1px solid rgba(201,168,76,0.12);
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
     }
 
-    .service-item {
+    .service-card {
+      background: #111110;
+      border: 1px solid rgba(201,168,76,0.08);
+      padding: 28px 24px 24px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s, background 0.2s;
       cursor: default;
-      transition: background 0.15s;
-      gap: 20px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .service-item:hover { padding-left: 12px; }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
 
-    .service-num {
+    .service-card:hover {
+      background: #181816;
+      border-color: rgba(201,168,76,0.25);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card-num {
       font-size: 10px;
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       color: var(--gold);
-      width: 28px;
-      flex-shrink: 0;
     }
 
-    .service-name {
+    .service-card-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .service-card-name {
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--white);
-      flex: 1;
+      line-height: 1.2;
       transition: color 0.2s;
     }
 
-    .service-item:hover .service-name { color: var(--gold-lt); }
+    .service-card:hover .service-card-name { color: var(--gold-lt); }
 
-    .service-tag {
+    .service-card-tag {
       font-size: 10px;
       font-weight: 400;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: rgba(245,242,236,0.3);
-      text-align: right;
+      margin-top: auto;
+    }
+
+    /* ── SMART LOCKS ─────────────────────────────────────── */
+    .smart-locks {
+      background: var(--black);
+    }
+
+    .smart-locks-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .smart-locks-visual {
+      position: relative;
+    }
+
+    .smart-locks-gif-wrap {
+      background: #0d0d0b;
+      border: 1px solid rgba(201,168,76,0.15);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .smart-locks-gif-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    .smart-locks-gif-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .simpled-brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 8px 16px 8px 10px;
+    }
+
+    .simpled-brand-badge img {
+      height: 33px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .simpled-brand-badge span {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .smart-locks-content h2 {
+      margin-bottom: 16px;
+    }
+
+    .smart-locks-content > p {
+      margin-bottom: 36px;
+    }
+
+    .entry-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 32px;
+    }
+
+    .entry-method {
+      background: #111110;
+      border: 1px solid rgba(201,168,76,0.08);
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .entry-method-icon {
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .entry-method-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .entry-method-name {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .entry-method-desc {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(245,242,236,0.45);
+      letter-spacing: 0.04em;
+      max-width: none;
+    }
+
+    /* ── PRODUCT SCROLLER ────────────────────────────────── */
+    .product-scroller-wrap {
+      margin-top: 48px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-scroller-wrap::before,
+    .product-scroller-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .product-scroller-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--black), transparent);
+    }
+
+    .product-scroller-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--black), transparent);
+    }
+
+    .product-scroller {
+      display: flex;
+      gap: 20px;
+      animation: scrollProducts 28s linear infinite;
+      width: max-content;
+    }
+
+    .product-scroller:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollProducts {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .product-card {
+      flex-shrink: 0;
+      width: 260px;
+      background: #0d0d0b;
+      border: 1px solid rgba(201,168,76,0.1);
+      overflow: hidden;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #0d0d0b;
+      padding: 8px;
+    }
+
+    .product-card-label {
+      padding: 14px 16px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey);
+      border-top: 1px solid rgba(201,168,76,0.1);
     }
 
     /* ── REVIEWS ─────────────────────────────────────────── */
@@ -749,6 +953,12 @@
       gap: 16px;
     }
 
+    .footer-badges {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
     .footer-badge {
       display: flex;
       align-items: center;
@@ -757,8 +967,9 @@
 
     .footer-badge img {
       width: 52px;
-      opacity: 0.85;
+      opacity: 1;
       mix-blend-mode: screen;
+      filter: brightness(1.4);
     }
 
     .footer-badge-text {
@@ -767,6 +978,35 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: rgba(245,242,236,0.35);
+      line-height: 1.5;
+    }
+
+    .footer-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(201,168,76,0.15);
+    }
+
+    .footer-partner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-partner img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      opacity: 1;
+      filter: brightness(1.3);
+    }
+
+    .footer-partner-label {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.25);
       line-height: 1.5;
     }
 
@@ -796,17 +1036,87 @@
     .footer-links a:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 680px) {
-      nav { padding: 0 20px; }
+
+    /* Tablet — covers wider Android flagships */
+    @media (max-width: 860px) {
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .smart-locks-inner { grid-template-columns: 1fr; gap: 40px; }
+      .contact { grid-template-columns: 1fr; gap: 48px; padding: 60px 40px; }
+    }
+
+    /* Mobile — iPhone 16 Pro (393px) and Samsung S25 Ultra (412px) */
+    @media (max-width: 500px) {
+      /* Nav */
+      nav { padding: 0 16px; height: 60px; }
       .nav-links { display: none; }
-      .hero, section { padding: 56px 24px; }
-      .about { grid-template-columns: 1fr; gap: 36px; }
-      .review-grid { grid-template-columns: 1fr; }
-      .postcode-grid { gap: 6px; }
-      .reviews-top { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; align-items: flex-start; }
-      .contact { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+      .logo-crest { width: 42px; height: 42px; }
+
+      /* Hero */
+      .hero { padding: 48px 20px 56px; }
+      .hero-crest { width: 120px; height: 120px; margin-bottom: 20px; }
+      .hero h1 { font-size: 36px; }
+      .hero-tagline { font-size: 14px; margin: 16px auto 28px; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+      .btn-gold, .btn-outline { justify-content: center; padding: 14px 20px; font-size: 12px; }
+      .hero-stats { flex-direction: column; max-width: 100%; }
+      .stat { border-left: none; border-top: 1px solid rgba(201,168,76,0.15); padding: 14px 0; }
+      .stat:first-child { border-top: none; }
+
+      /* Sections */
+      section { padding: 48px 20px; }
+      h2 { font-size: 28px; }
+
+      /* About */
+      .about { grid-template-columns: 1fr; gap: 28px; padding: 48px 20px; }
+      .about-image { aspect-ratio: 3/2; }
+
+      /* Services */
+      .services-intro { margin-bottom: 32px; }
+      .service-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+      .service-card { padding: 18px 14px 16px; gap: 8px; }
+      .service-card-icon { font-size: 22px; }
+      .service-card-name { font-size: 14px; }
+      .service-card-tag { font-size: 9px; letter-spacing: 0.08em; }
+
+      /* Gallery */
+      .carousel-slide img { height: 260px; }
+
+      /* Smart locks */
+      .smart-locks { padding: 48px 20px; }
+      .smart-locks-inner { grid-template-columns: 1fr; gap: 32px; }
+      .entry-methods { grid-template-columns: 1fr; gap: 2px; }
+      .simpled-brand-badge { padding: 6px 12px 6px 8px; }
+      .simpled-brand-badge img { height: 26px; }
+
+      /* Product scroller */
+      .product-card { width: 160px; }
+      .product-card img { height: 140px; padding: 6px; }
+      .product-card-label { font-size: 10px; padding: 10px 12px; }
+
+      /* Reviews */
+      .reviews-top { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+      .reviews-score-big { font-size: 44px; }
+      .featured-review { padding: 18px 0 18px 18px; }
+      .featured-review blockquote { font-size: 16px; }
+      .review-grid { grid-template-columns: 1fr; gap: 2px; }
+      .review-card { padding: 20px; }
+
+      /* Coverage */
+      .postcode-grid { gap: 6px; margin-top: 24px; }
+      .postcode { font-size: 12px; padding: 6px 12px; }
+
+      /* Contact */
+      .contact { grid-template-columns: 1fr; gap: 40px; padding: 48px 20px; }
+      .contact-form-wrap { padding: 24px 20px; }
       .form-row { grid-template-columns: 1fr; }
+      .contact-left .btn-dark { width: 100%; justify-content: center; }
+
+      /* Footer */
+      footer { flex-direction: column; align-items: flex-start; padding: 28px 20px; gap: 20px; }
+      .footer-badges { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer-divider { display: none; }
+      .footer-copy { font-size: 10px; }
+      .footer-links { flex-wrap: wrap; gap: 14px; }
     }
   </style>
 </head>
@@ -821,6 +1131,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About Ray</a></li>
+      <li><a href="#smart-locks">Smart Locks</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#coverage">Coverage</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -900,48 +1211,56 @@
       <p>Full mobile workshop — domestic, UPVC, commercial and heritage. Fixed rates, quoted before the job starts. If it's not something Ray can fix, he'll tell you up front.</p>
     </div>
 
-    <ul class="service-list">
-      <li class="service-item">
-        <span class="service-num">01</span>
-        <span class="service-name">Emergency Lockouts</span>
-        <span class="service-tag">24/7 · Non-destructive first</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">02</span>
-        <span class="service-name">Broken Key Extraction</span>
-        <span class="service-tag">Clean removal · Key cut on site</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">03</span>
-        <span class="service-name">Lock Replacement &amp; Upgrades</span>
-        <span class="service-tag">British Standard · Anti-snap</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">04</span>
-        <span class="service-name">Key Cutting On Site</span>
-        <span class="service-tag">Euro · Mortice · Timpson</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">05</span>
-        <span class="service-name">UPVC Door Specialist</span>
-        <span class="service-tag">Gearbox · Multi-point mechanisms</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">06</span>
-        <span class="service-name">Key Safes &amp; Lock Boxes</span>
-        <span class="service-tag">Police approved · LPS 1175</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">07</span>
-        <span class="service-name">Safe Opening</span>
-        <span class="service-tag">John Tann · Chubb · Digital</span>
-      </li>
-      <li class="service-item">
-        <span class="service-num">08</span>
-        <span class="service-name">Aftercare &amp; Honest Advice</span>
-        <span class="service-tag">No upselling · What needs doing now</span>
-      </li>
-    </ul>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="service-card-num">01</span>
+        <div class="service-card-icon">🔓</div>
+        <div class="service-card-name">Emergency Lockouts</div>
+        <div class="service-card-tag">24/7 · Non-destructive first</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">02</span>
+        <div class="service-card-icon">🔑</div>
+        <div class="service-card-name">Broken Key Extraction</div>
+        <div class="service-card-tag">Clean removal · Key cut on site</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">03</span>
+        <div class="service-card-icon">🔒</div>
+        <div class="service-card-name">Lock Replacement &amp; Upgrades</div>
+        <div class="service-card-tag">British Standard · Anti-snap</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">04</span>
+        <div class="service-card-icon">✂️</div>
+        <div class="service-card-name">Key Cutting On Site</div>
+        <div class="service-card-tag">Euro · Mortice · Timpson</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">05</span>
+        <div class="service-card-icon">🚪</div>
+        <div class="service-card-name">UPVC Door Specialist</div>
+        <div class="service-card-tag">Gearbox · Multi-point mechanisms</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">06</span>
+        <div class="service-card-icon">📦</div>
+        <div class="service-card-name">Key Safes &amp; Lock Boxes</div>
+        <div class="service-card-tag">Police approved · LPS 1175</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">07</span>
+        <div class="service-card-icon">🏦</div>
+        <div class="service-card-name">Safe Opening</div>
+        <div class="service-card-tag">John Tann · Chubb · Digital</div>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">08</span>
+        <div class="service-card-icon">💬</div>
+        <div class="service-card-name">Aftercare &amp; Honest Advice</div>
+        <div class="service-card-tag">No upselling · What needs doing now</div>
+      </div>
+    </div>
   </section>
 
   <!-- GALLERY CAROUSEL ─────────────────────────────────────── -->
@@ -999,6 +1318,128 @@
       <button class="carousel-dot" onclick="goToSlide(6)"></button>
       <button class="carousel-dot" onclick="goToSlide(7)"></button>
     </div>
+  </section>
+
+  <!-- SMART LOCKS ──────────────────────────────────────────── -->
+  <section class="smart-locks" id="smart-locks">
+    <div class="smart-locks-inner">
+
+      <div class="smart-locks-visual">
+        <div class="smart-locks-gif-wrap">
+          <img src="Simpled/Simpled.gif" alt="Simpled Digital Door Lock" />
+        </div>
+      </div>
+
+      <div class="smart-locks-content">
+        <div class="simpled-brand-badge">
+          <img src="Simpled/simpled logo.png" alt="Simpled" />
+          <span>Approved Product</span>
+        </div>
+
+        <p class="section-eyebrow">Smart Locks / Simpled</p>
+        <h2>Five ways in.<br><em>Zero keys required.</em></h2>
+
+        <p>The Simpled Digital Door Lock is a European-standard euro-cylinder replacement — the same fitting Ray works with every day. It retrofits to most existing doors without drilling new holes.</p>
+        <p style="margin-top: 14px; margin-bottom: 0;">Get in touch for prices on this product and many others from Simpled.</p>
+
+        <div class="entry-methods">
+          <div class="entry-method">
+            <div class="entry-method-icon">👆</div>
+            <div class="entry-method-text">
+              <span class="entry-method-name">Fingerprint</span>
+              <span class="entry-method-desc">Instant biometric unlock</span>
+            </div>
+          </div>
+          <div class="entry-method">
+            <div class="entry-method-icon">🔢</div>
+            <div class="entry-method-text">
+              <span class="entry-method-name">PIN Code</span>
+              <span class="entry-method-desc">Set codes for guests or family</span>
+            </div>
+          </div>
+          <div class="entry-method">
+            <div class="entry-method-icon">📱</div>
+            <div class="entry-method-text">
+              <span class="entry-method-name">Bluetooth</span>
+              <span class="entry-method-desc">Hands-free via your phone</span>
+            </div>
+          </div>
+          <div class="entry-method">
+            <div class="entry-method-icon">💳</div>
+            <div class="entry-method-text">
+              <span class="entry-method-name">Card</span>
+              <span class="entry-method-desc">Tap-to-open access card</span>
+            </div>
+          </div>
+          <div class="entry-method">
+            <div class="entry-method-icon">🔑</div>
+            <div class="entry-method-text">
+              <span class="entry-method-name">Mechanical Key</span>
+              <span class="entry-method-desc">Traditional backup always available</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Auto-scrolling product cards -->
+    <div class="product-scroller-wrap">
+      <div class="product-scroller" id="productScroller">
+        <!-- Original set -->
+        <div class="product-card">
+          <img src="Simpled/products/digital lock.jpg" alt="Simpled Digital Door Lock" />
+          <div class="product-card-label">Digital Door Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/smart lock.jpg" alt="Simpled Smart Lock" />
+          <div class="product-card-label">Smart Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/digital door viewer.JPG" alt="Simpled Digital Door Viewer" />
+          <div class="product-card-label">Digital Door Viewer</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/glass door lock.jpg" alt="Simpled Glass Door Lock" />
+          <div class="product-card-label">Glass Door Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/RF smart lock.jpg" alt="Simpled RF Smart Lock" />
+          <div class="product-card-label">RF Smart Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/UF smart lock.jpg" alt="Simpled UF Smart Lock" />
+          <div class="product-card-label">UF Smart Lock</div>
+        </div>
+        <!-- Duplicated set for seamless loop -->
+        <div class="product-card">
+          <img src="Simpled/products/digital lock.jpg" alt="Simpled Digital Door Lock" />
+          <div class="product-card-label">Digital Door Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/smart lock.jpg" alt="Simpled Smart Lock" />
+          <div class="product-card-label">Smart Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/digital door viewer.JPG" alt="Simpled Digital Door Viewer" />
+          <div class="product-card-label">Digital Door Viewer</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/glass door lock.jpg" alt="Simpled Glass Door Lock" />
+          <div class="product-card-label">Glass Door Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/RF smart lock.jpg" alt="Simpled RF Smart Lock" />
+          <div class="product-card-label">RF Smart Lock</div>
+        </div>
+        <div class="product-card">
+          <img src="Simpled/products/UF smart lock.jpg" alt="Simpled UF Smart Lock" />
+          <div class="product-card-label">UF Smart Lock</div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- REVIEWS ──────────────────────────────────────────────── -->
@@ -1125,16 +1566,26 @@
 
   <!-- FOOTER ───────────────────────────────────────────────── -->
   <footer>
-    <div class="footer-badge">
-      <img src="uklock.jpeg" alt="UK Locksmiths Association member" />
-      <div class="footer-badge-text">UK Locksmiths<br>Association Member</div>
+    <div class="footer-badges">
+      <div class="footer-badge">
+        <img src="uklock.jpeg" alt="UK Locksmiths Association member" />
+        <div class="footer-badge-text">UK Locksmiths<br>Association Member</div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-partner">
+        <img src="Simpled/simpled logo.png" alt="Simpled" />
+        <div class="footer-partner-label">Approved<br>Stockist</div>
+      </div>
     </div>
+
     <div class="footer-copy">
       Bedfordshire's owner-operated 24-hour locksmith. The number on this site is Ray's direct line — he answers it himself.<br>
       © 2026 Keygen Locksmiths, Bedfordshire · Owner: Ray · MK42 0PU
     </div>
+
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#smart-locks">Smart Locks</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#coverage">Coverage</a></li>
       <li><a href="#contact">Contact</a></li>
